@@ -1,0 +1,29 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+<p>Hello {{ name }}
+
+<table>
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>index</th>
+            <th>name</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each data}}
+        <tr>
+            {{#if @first}}
+                <td>20</td>
+                <td>{{@index}}</td>
+                <td>Company 20</td>
+            {{/if}}
+            <td>{{id}}</td>
+            <td>{{@index}}</td>
+            <td>{{name}}</td>
+            <td>{{#date}}{{/date}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+
+</table>

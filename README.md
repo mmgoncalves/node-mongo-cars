@@ -1,0 +1,2 @@
+# node-mongo
+only test
