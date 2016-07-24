@@ -4,6 +4,6 @@ var service = require('./../services/user');
 
 /* GET users listing. */
 router.get('/login', service.login);
-router.get('/register', service.login);
+router.get('/register', service.register);
 
 module.exports = router;
