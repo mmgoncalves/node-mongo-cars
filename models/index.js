@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var db = mongoose.connect('mongodb://localhost/library').connection;
+var db = mongoose.connect('mongodb://192.168.99.100/library').connection;
 
 db.on('open', function(){
     console.log('MongoDB is connected');

@@ -16,7 +16,7 @@ var Car = mongoose.Schema({
         default: 'IN'
     },
     date: {
-        type: date,
+        type: Date,
         default: Date.now
     }
 });

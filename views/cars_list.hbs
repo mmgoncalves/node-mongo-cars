@@ -10,14 +10,31 @@
                     <th class="text-center">ID</th>
                     <th class="text-center">Driver name</th>
                     <th class="text-center">Status</th>
+                    <th class="text-center" colspan="2">Actions</th>
                 </tr>
             </thead>
             <tbody>
+            {{#each cars}}
                 <tr>
-                    <td class="text-left"></td>
-                    <td class="text-center"></td>
-                    <td class="text-center"></td>
+                    <td class="text-left">{{ _id }}</td>
+                    <td class="text-center">{{ driver_name }}</td>
+                    <td class="text-center">{{ status }}</td>
+                    <td>
+                        <a href="/cars/edit/{{ _id }}" class=" btn btn-info">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </a>
+                    </td>
+                    <td>
+                        <form action="/cars/{{_id}}" method="POST">
+                            <input type="hidden" value="DELETE" name="_method"/>
+                            <button type="submit" class="btn btn-warning">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </form>
+                    </td>
                 </tr>
+            {{/each}}
+
             </tbody>
 
         </table>
