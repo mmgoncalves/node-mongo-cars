@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var methodoverride = require('method-override');
 var hbs = require('hbs');
 var connection = require('./models');
+var session = require('express-session');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -25,6 +26,9 @@ hbs.registerHelper('equals', function(val1, val2, options){
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(session({
+  secret: 'parkingsystem'
+}));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
